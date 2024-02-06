@@ -2,9 +2,15 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 
+/**
+ * Registers a new user.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ */
 async function registerUser(req, res) {
   try {
     const { username, password } = req.body;
+
     // Add logic to validate input
 
     // Hash the password
@@ -18,7 +24,7 @@ async function registerUser(req, res) {
     const userId = await User.create(user);
 
     // Generate a JWT token
-    const token = jwt.sign({ userId }, 'eb4a0751cf519c8254b5cb9f7162c966119bc18e3859dfd23c1f4422e5f716c4');
+    const token = jwt.sign({ userId }, 'access-key');
 
     // Return the token to the client
     res.json({ token });
@@ -28,9 +34,15 @@ async function registerUser(req, res) {
   }
 }
 
+/**
+ * Logs in a user.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ */
 async function loginUser(req, res) {
   try {
     const { username, password } = req.body;
+
     // Add logic to validate input
 
     // Find the user in the database
@@ -43,7 +55,7 @@ async function loginUser(req, res) {
     }
 
     // Generate a JWT token
-    const token = jwt.sign({ userId: user._id }, 'eb4a0751cf519c8254b5cb9f7162c966119bc18e3859dfd23c1f4422e5f716c4');
+    const token = jwt.sign({ userId: user._id }, 'access-key');
 
     // Return the token to the client
     res.json({ token });
