@@ -1,0 +1,32 @@
+{
+  "name": "user-management-system",
+  "version": "1.0.0",
+  "description": "ums",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rgluys/CodeCraftHub.git"
+  },
+  "keywords": [
+    "education",
+    "mongodb",
+    "generative",
+    "ai",
+    "lms"
+  ],
+  "author": "rgluys",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rgluys/CodeCraftHub/issues"
+  },
+  "homepage": "https://github.com/rgluys/CodeCraftHub#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.1"
+  }
+}
